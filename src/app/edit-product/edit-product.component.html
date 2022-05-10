@@ -1,0 +1,101 @@
+<div class="EditProduct">
+  <form
+    class="needs-validation"
+    #addProductForm="ngForm"
+    (ngSubmit)="createProduct(addProductForm.value)">
+
+    <div class="row">
+      <div class="col-md-6 mb-3">
+        <label for="title">Product Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="title"
+          name="title"
+          [(ngModel)]="productInfo.title"
+          placeholder="Product Name"
+          value=""
+          required
+        />
+        <div class="invalid-feedback">Valid name is required.</div>
+      </div>
+      <div class="col-md-6 mb-3">
+        <label for="category">Product Category</label>
+        <select name="category" id="category"  class="form-control" [(ngModel)]="productInfo.category">
+          <option value="electronics">electronics</option>
+          <option value="Men's clothing" selected>Men's clothing</option>
+          <option value="women's clothing">women's clothing</option>
+          <option value="jewelery">jewelery</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="description"
+        >Product Description
+        <span class="text-muted">(Optional)</span>
+      </label>
+      <textarea
+        type="text"
+        class="form-control"
+        id="description"
+        placeholder="Product Description"
+        name="description"
+        [(ngModel)]="productInfo.description"
+      ></textarea>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6 mb-3">
+        <label for="price">Product Price</label>
+        <input
+          type="number"
+          name="price"
+          class="form-control"
+          [(ngModel)]="productInfo.price"
+          placeholder="Product Price"
+          id="price"
+          value=""
+          required
+        />
+        <div class="invalid-feedback">Valid first name is required.</div>
+      </div>
+      <div class="col-md-6 mb-3" *ngIf="type === 'Update' " >
+        <label for="productRating">Product Rating</label>
+        <input
+          type="text"
+          class="form-control"
+          id="productSeller"
+          [(ngModel)]="productInfo.rating.rate"
+          name="productRating"
+          placeholder="Product Rating"
+          readonly
+        />
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="image">Product Image</label>
+      <input
+        type="file"
+        class="form-control"
+        id="image"
+        [(ngModel)]="productInfo.image"
+        name="image"
+        placeholder="Image Url"
+        required
+      />
+      <img
+        [src]="productInfo.image"
+        alt="Product image"
+        style="height: 80px; width: 80px; padding-top: 5px"
+      />
+    </div>
+
+    <hr class="mb-4" />
+
+    <button class="btn btn-primary btn-lg btn-block" type="submit">
+      {{ type }} Product
+    </button>
+  </form>
+</div>

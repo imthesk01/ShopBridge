@@ -1,0 +1,30 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    height: 40px;
+    background-color: #8b8bb1;
+    font-size: 14px;
+    align-items: center;
+    padding: 20px;
+}
+.brand{
+    font-size: 30px;
+    font-weight: bold;
+    font-family: serif;
+}
+
+.adminView{
+    margin-right: 10px;
+}
+.logout{
+    margin-left: 10px;
+}
+.user{
+    display: flex;
+}
+
+.user :hover{
+    text-decoration: underline;
+    color: aliceblue;
+    cursor: pointer; 
+}

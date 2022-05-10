@@ -1,0 +1,38 @@
+<div class="jumbotron" style="height: 100vh" *ngIf="!regForm">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3" >
+                <h3>Login - Admin</h3>
+                <form name="form" #loginForm="ngForm" (ngSubmit)="loginForm.form.valid && onSubmitSignIn()" novalidate>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" class="form-control" name="userEmail" [(ngModel)]="signInFormValue.userEmail"
+                            #userEmail="ngModel" [ngClass]="{ 'is-invalid': loginForm.submitted && userEmail.invalid }"
+                            required email />
+                        <div *ngIf="loginForm.submitted && userEmail.invalid" class="invalid-feedback">
+                            <div *ngIf="userEmail.errors?.required">First Name is required</div>
+                            <div *ngIf="userEmail.errors?.email">Email must be a valid email address</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" class="form-control" name="userPassword" [(ngModel)]="signInFormValue.userPassword"
+                            #userPassword="ngModel" [ngClass]="{ 'is-invalid': loginForm.submitted && userPassword.invalid }"
+                            required minlength="5" togglePassword />
+                        <div *ngIf="loginForm.submitted && userPassword.invalid" class="invalid-feedback">
+                            <div *ngIf="userPassword.errors?.required || userPassword.errors?.minlength">Password must be
+                                at least 6 characters
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-primary">Login</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="" *ngIf="regForm">
+    <app-header></app-header>    
+</div>

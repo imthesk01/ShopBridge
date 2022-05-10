@@ -1,0 +1,18 @@
+<div class="">
+  <div class="header">
+    <div class="brand">Shopbridge</div>
+    <div class="menuItem d-flex">
+      <div class="adminView">Admin Dashboard</div>
+    </div>
+
+    <div class="user">
+      <div class="userid">{{ userEmail }}</div>
+      <div class="logout" (click)="logoutUser()">Logout</div>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div class="adminView">
+      <app-dashboard></app-dashboard>
+    </div>
+  </div>
+</div>
