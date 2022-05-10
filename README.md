@@ -1,8 +1,21 @@
 # Shopbridge
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.0.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.0,  
+and responsive behavior is added with bootstrap version 4.3.2.
+Admin Table is created by Angular material with Sorting listed products, Pagination and searching specific product.
 
-## Development server
+Email id and password minimum of 6 character is required to login.
+login email id is stored in browser session storage.
+login page with route you to the admin page using Angular router. similarly after logining out, user will be logout to signin page. 
+
+All the listed product data are fetch from "https://fakestoreapi.com/products"
+Angular http CLient is used to fetch, add and update list.
+
+Check the live page - **https://imthesk01.github.io/ShopBridge/**
+
+## Development server on your local system
+
+Run 'npm install' command to install all the dependenct.
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
